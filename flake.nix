@@ -8,8 +8,9 @@
     flake-utils.lib.eachDefaultSystem (system: 
       let 
         pkgs = import nixpkgs { inherit system; };
-        pythonEnv = pkgs.python3.withPackages (ps: [
+        pythonEnv = pkgs.python39.withPackages (ps: [
           # python packages will be here
+          ps.requests
         ]);
       in {
         devShell = with pkgs; mkShell {
