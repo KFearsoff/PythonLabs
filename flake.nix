@@ -11,6 +11,8 @@
         pythonEnv = pkgs.python39.withPackages (ps: [
           # python packages will be here
           ps.requests
+          ps.flask 
+          ps.psycopg2
         ]);
       in {
         devShell = with pkgs; mkShell {
